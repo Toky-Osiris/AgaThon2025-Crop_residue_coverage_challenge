@@ -1,9 +1,11 @@
 # AgaThon2025-Crop_residue_coverage_challenge Washington State University
 
-Accurate segmentation of crop residue using RGB images and reliable estimates of the amount of residue cover on the soil
+This is an object detection challenge!
+
+Accurate segmentation of crop residue using RGB images and reliable estimates of the amount of crop residue cover on the soil
 
 
-This repository contains the code for preprocessing, training and using a MaskRCNN model for segmenting and estimating the amount of residue in an RGB image.
+This repository contains the code for preprocessing, training and using a MaskRCNN model for segmenting and estimating the amount of crop residue in an RGB image.
 
 - During the preprocessing stage, a COCO JSON file is generated from the binary masks and their corresponding original images. It contains the labels and metadata of the dataset and used for training the MASKRCNN model.
 - During the inference phase, you can enter the level of confidence you would like the model to generate. For example, if you enter 0.95 as a confidence level, the model will only output the objects having an IoU greater than 0.95.
