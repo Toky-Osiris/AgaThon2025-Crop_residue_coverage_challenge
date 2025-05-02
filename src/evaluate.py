@@ -42,7 +42,7 @@ class ImageSegmenter:
         model.to(self.device)
         model.eval()
         model.roi_heads.detections_per_img = 10000  # Remove the limit of objects
-        print("✅ Model loaded successfully!")
+        print("Model loaded successfully!")
         return model
 
     def load_image(self, image_path):
@@ -50,7 +50,7 @@ class ImageSegmenter:
         print("Loading image...")
         image = Image.open(image_path).convert("RGB")
         image_tensor = F.to_tensor(image).to(self.device)  # Convert to tensor and move to device
-        print("✅ Image loaded successfully!")
+        print("Image loaded successfully!")
         return image, image_tensor
 
     def run_inference(self, image_tensor):
@@ -67,7 +67,7 @@ class ImageSegmenter:
         filtered_masks = pred_masks[keep]
         filtered_scores = pred_scores[keep]
         binary_masks = (filtered_masks > 0.5).astype(np.uint8)
-        print(f"✅ {len(filtered_boxes)} objects detected for {self.confidence_threshold} threshold!")
+        print(f"{len(filtered_boxes)} objects detected for {self.confidence_threshold} threshold!")
         return filtered_boxes, binary_masks, filtered_scores
 
 
