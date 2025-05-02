@@ -106,7 +106,7 @@ def generate_coco_json_from_masks(mask_dir, image_dir, output_json, category_nam
     with open(output_json, "w") as f:
         json.dump(coco_data, f, indent=4)
 
-    print(f"✅ COCO JSON saved at {output_json}")
+    print(f"COCO JSON saved at {output_json}")
 
 mask_dir=r'data\raw\masks'
 image_dir=r'data\raw\original'    
